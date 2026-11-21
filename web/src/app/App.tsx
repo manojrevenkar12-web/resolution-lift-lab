@@ -1,0 +1,103 @@
+import { MotionConfig } from "framer-motion";
+import { useState } from "react";
+
+import { EstimatorTable } from "../features/billing/EstimatorTable";
+import { OutcomeBar } from "../features/billing/OutcomeBar";
+import { EffectForest } from "../features/lift/EffectForest";
+import { TruthScatter } from "../features/lift/TruthScatter";
+import { TopicsTable } from "../features/topics/TopicsTable";
+import { type Report, type SetName, num, pct, pts, useReport } from "../shared/data/report";
+import { ErrorState, MissingState, Skeleton } from "../shared/ui/states";
+import styles from "./App.module.css";
+
+export function App() {
+  const [set, setSet] = useState<SetName>("heldout");
+  const { state, retry } = useReport(set);
+  return (
+    <MotionConfig reducedMotion="user">
+      <div className={styles.page}>
+        <header className={styles.header}>
+          <p className={styles.repo}>resolution-lift-lab</p>
+          <h1 className={styles.title}>Which resolutions were real, and which fixes worked</h1>
+          <p className={styles.lead}>
+            An AI support agent bills when a customer confirms or goes quiet for a day. This lab measures what really happened, finds the questions
+            with no article, and tests whether content fixes raise resolutions, against a simulated support world that knows the answer.
+          </p>
+          <div className={styles.toggle} role="group" aria-label="Which seeds">
+            {(["heldout", "dev"] as const).map((s) => (
+              <button key={s} type="button" aria-pressed={set === s} onClick={() => setSet(s)}>
+                {s === "heldout" ? "Held-out seeds, run once" : "Development seeds"}
+              </button>
+            ))}
+          </div>
+        </header>
+        {state.status === "loading" && <Skeleton />}
+        {state.status === "error" && <ErrorState message={state.message} onRetry={retry} />}
+        {state.status === "missing" && <MissingState set={set} />}
+        {state.status === "ready" && <Results report={state.report} />}
+      </div>
+    </MotionConfig>
+  );
+}
+
+function Results({ report: r }: { report: Report }) {
+  const f = r.facts;
+  const naive = r.lift.before_after_billed!;
+  const ab = r.lift.ab_holdout!;
+  const ppi = r.resolution.ppi!;
+  const topic = r.topics.char_kmeans_cited!;
+  const keywords = r.topics.keyword_rules!;
+  return (
+    <main className={styles.main}>
+      <p className={styles.meta}>
+        Seeds {r.seeds.join(", ")} · {num(f.conversations)} conversations · {num(f.fixes)} content fixes · {num(f.audits)} audited · config{" "}
+        <code>{r.config_sha}</code> · {r.generated_at.slice(0, 10)}
+      </p>
+
+      <section className={styles.section} aria-labelledby="q-billing">
+        <h2 id="q-billing" className={styles.question}>
+          How many billed resolutions were real?
+        </h2>
+        <p className={styles.answer}>
+          <b>{pct(f.billed_not_resolved / f.billed)}</b> of billed resolutions were customers who had given up. Prediction-powered inference recovers the
+          true rate within {pts(ppi.mae).replace("+", "")} on average, with a 95% interval that held {pct(ppi.coverage, 0)} of the time, from about 70 audited
+          conversations per workspace and month.
+        </p>
+        <OutcomeBar facts={f} />
+        <EstimatorTable rows={r.resolution} />
+      </section>
+
+      <section className={styles.section} aria-labelledby="q-lift">
+        <h2 id="q-lift" className={styles.question}>
+          Did a content fix raise resolutions?
+        </h2>
+        <p className={styles.answer}>
+          The before/after view claims <b>{pts(naive.pooled)}</b> per fix; the truth is {pts(naive.true_mean)}. The article picked was the one that had a bad
+          week, so it would have recovered anyway. A pooled A/B holdout says {pts(ab.pooled)}. One article's two-week test can only see changes of about{" "}
+          {pts(r.mde_median).replace("+", "")}, so judge the recommendations programme, not each fix.
+        </p>
+        <EffectForest lift={r.lift} />
+        <TruthScatter points={r.lift_points} />
+      </section>
+
+      <section className={styles.section} aria-labelledby="q-topics">
+        <h2 id="q-topics" className={styles.question}>
+          What do customers ask that no article answers?
+        </h2>
+        <p className={styles.answer}>
+          Clustering the text and merging clusters where the agent's citations agree found{" "}
+          <b>
+            {topic.gaps_found} of {topic.workspaces}
+          </b>{" "}
+          questions with no article (ARI {topic.ari.toFixed(2)}). Keyword rules kept by hand miss German entirely (ARI {keywords.ari_de.toFixed(2)}).
+        </p>
+        <TopicsTable topics={r.topics} />
+      </section>
+
+      <footer className={styles.footer}>
+        Everything is simulated: no real customer, conversation or company. Numbers are generated by <code>python -m rll.cli run</code>; see REPORT.md and
+        docs/adr.
+      </footer>
+    </main>
+  );
+}

@@ -1,0 +1,3 @@
+# Development seeds: tune and look as often as you like. Held-out seeds: run once (reports/heldout.lock).
+dev: [1, 2, 3]
+heldout: [9101, 9102, 9103]

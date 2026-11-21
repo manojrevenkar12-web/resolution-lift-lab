@@ -1,0 +1,175 @@
+.forest {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--surface);
+}
+
+.plot {
+  position: relative;
+  display: grid;
+  gap: 0;
+  --label: var(--col-label);
+  --value: 5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: var(--label) 1fr var(--value);
+  gap: var(--space-4);
+  align-items: center;
+  min-height: var(--space-6);
+}
+
+.row[data-tone="claim"] {
+  --tone: var(--claim);
+}
+
+.row[data-tone="measured"] {
+  --tone: var(--measured);
+}
+
+.row[data-tone="muted"] {
+  --tone: var(--ink-faint);
+}
+
+.label {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  text-align: right;
+}
+
+.row[data-tone="measured"] .label,
+.row[data-tone="measured"] .value {
+  color: var(--measured);
+  font-weight: var(--weight-bold);
+}
+
+.value {
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--tone);
+}
+
+.track {
+  position: relative;
+  height: var(--space-6);
+  border-bottom: var(--hairline) dashed var(--rule);
+}
+
+.ci {
+  position: absolute;
+  top: 50%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--tone);
+  transform: translateY(-50%);
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  width: var(--space-3);
+  height: var(--space-3);
+  border: 3px solid var(--tone);
+  border-radius: 50%;
+  background: var(--surface);
+  transform: translate(-50%, -50%);
+}
+
+.truthTick {
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  border-left: 2px dashed var(--truth);
+}
+
+.axis {
+  position: relative;
+  height: var(--space-5);
+}
+
+.axis span {
+  position: absolute;
+  top: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  transform: translateX(-50%);
+}
+
+.axis .truthLabel {
+  font-weight: var(--weight-bold);
+  color: var(--truth);
+  transform: none;
+  white-space: nowrap;
+}
+
+.caption {
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
+}
+
+.scatters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-5);
+}
+
+.scatter {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--surface);
+}
+
+.scatter svg {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.scatter figcaption {
+  display: grid;
+  font-size: var(--text-sm);
+}
+
+.scatter figcaption span {
+  color: var(--ink-faint);
+  font-size: var(--text-xs);
+}
+
+.frame {
+  fill: none;
+  stroke: var(--rule);
+}
+
+.diagonal {
+  stroke: var(--truth);
+  stroke-dasharray: 4 3;
+}
+
+.point[data-tone="claim"] {
+  fill: var(--claim);
+  opacity: 0.55;
+}
+
+.point[data-tone="measured"] {
+  fill: var(--measured);
+  opacity: 0.55;
+}
+
+@media (width <= 44rem) {
+  .forest {
+    grid-template-columns: 1fr;
+  }
+
+  .labels {
+    display: none;
+  }
+
+  .caption {
+    grid-column: 1;
+  }
+}

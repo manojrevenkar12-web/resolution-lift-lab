@@ -1,0 +1,55 @@
+# Settings of the methods. The world never reads this file.
+topics:
+  sample_days: 14               # conversations used to discover topics per workspace
+  k_range: [5, 13]              # cluster counts tried; the silhouette picks one
+  svd_components: 60
+  min_cluster_share: 0.02       # smaller clusters are merged into "other"
+  overcluster_k: 24             # char_kmeans_cited: start with too many clusters...
+  merge_citation_share: 0.6     # ...merge those one article dominates...
+  merge_text_similarity: 0.45   # ...and join the unexplained ones whose texts are this close
+  gap_purity: 0.6               # a cluster is a content gap if most of it cites articles that resolve poorly...
+  gap_max_citation_share: 0.5   # ...and no single article is cited by more than this share of it
+  # the status quo: phrases a support team maintains by hand (English only)
+  keyword_rules:
+    reset_password: ["password", "reset"]
+    two_factor: ["2fa", "two factor"]
+    change_plan: ["upgrade", "downgrade", "switch plan"]
+    invoice_copy: ["invoice"]
+    api_rate_limit: ["429", "rate limit"]
+    integration_sync: ["sync"]
+    export_data: ["export"]
+    add_seats: ["seat"]
+    where_is_order: ["tracking", "arrive", "in transit"]
+    return_item: ["return label", "send back"]
+    refund_status: ["refund"]
+    wrong_item: ["wrong item", "damaged"]
+    change_address: ["address"]
+    discount_code: ["discount", "voucher", "promo"]
+    payment_failed: ["payment", "declined"]
+    size_guide: ["size"]
+    card_declined: ["declined", "unblock"]
+    transfer_pending: ["transfer"]
+    verify_identity: ["verification", "verify", "passport"]
+    unknown_charge: ["charge", "fraud"]
+    change_limit: ["limit"]
+    close_account: ["close my account", "delete my account", "cancel"]
+    statement_download: ["statement"]
+    savings_interest: ["interest"]
+
+resolution:
+  model:
+    max_iter: 250
+    learning_rate: 0.06
+    max_leaf_nodes: 15
+    l2_regularization: 1.0
+  folds_by_workspace: 4         # cross-fitting: a workspace's audits never train its own predictions
+  unit_days: 28                 # estimates per workspace and 4-week block
+  alpha: 0.05
+
+lift:
+  post_days: 14
+  pre_days: 7                   # naive and DiD: the week before the fix (the week that triggered it)
+  rtm_pre: [21, 7]              # RTM-aware DiD: days d-21 .. d-8, skipping d-7 .. d-1, the week used to pick the fix
+  min_conversations: 10
+  alpha: 0.05
+  power: 0.8

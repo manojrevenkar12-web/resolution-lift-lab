@@ -1,0 +1,2274 @@
+{
+  "set": "dev",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "config_sha": "df75be296832fc2e",
+  "generated_at": "2026-11-21T17:01:40Z",
+  "facts": {
+    "conversations": 210322,
+    "fixes": 540,
+    "audits": 10368,
+    "billed": 173734,
+    "billed_not_resolved": 25792,
+    "confirmed": 50310,
+    "assumed_resolved": 97632,
+    "assumed_unresolved": 25792,
+    "escalated": 36588,
+    "true_resolution_rate": 0.725,
+    "billed_rate": 0.8252
+  },
+  "topics": {
+    "by_citation": {
+      "ari": 0.7078,
+      "nmi": 0.6937,
+      "assigned": 1.0,
+      "clusters": 7.0,
+      "gaps_found": 0.0,
+      "workspaces": 36.0,
+      "false_gap_flags": 0.0,
+      "ari_en": 0.7063,
+      "ari_de": 0.7107
+    },
+    "char_kmeans": {
+      "ari": 0.5136,
+      "nmi": 0.7678,
+      "assigned": 0.9984,
+      "clusters": 12.9167,
+      "gaps_found": 29.0,
+      "workspaces": 36.0,
+      "false_gap_flags": 21.0,
+      "ari_en": 0.4618,
+      "ari_de": 0.6173
+    },
+    "char_kmeans_cited": {
+      "ari": 0.9498,
+      "nmi": 0.9654,
+      "assigned": 1.0,
+      "clusters": 9.5556,
+      "gaps_found": 36.0,
+      "workspaces": 36.0,
+      "false_gap_flags": 1.0,
+      "ari_en": 0.9418,
+      "ari_de": 0.9656
+    },
+    "keyword_rules": {
+      "ari": 0.5735,
+      "nmi": 0.6908,
+      "assigned": 0.6483,
+      "clusters": 6.2222,
+      "gaps_found": 25.0,
+      "workspaces": 36.0,
+      "false_gap_flags": 3.0,
+      "ari_en": 0.8,
+      "ari_de": 0.1204
+    },
+    "word_kmeans": {
+      "ari": 0.4767,
+      "nmi": 0.7418,
+      "assigned": 0.9986,
+      "clusters": 12.8889,
+      "gaps_found": 30.0,
+      "workspaces": 36.0,
+      "false_gap_flags": 38.0,
+      "ari_en": 0.4142,
+      "ari_de": 0.6015
+    }
+  },
+  "resolution": {
+    "audit_only": {
+      "mae": 0.0399,
+      "bias": -0.0009,
+      "p90_abs_error": 0.0848,
+      "coverage": 0.9236,
+      "width": 0.2024,
+      "units": 144
+    },
+    "billing_proxy": {
+      "mae": 0.0968,
+      "bias": 0.0966,
+      "p90_abs_error": 0.1646,
+      "coverage": null,
+      "width": null,
+      "units": 144
+    },
+    "model_only": {
+      "mae": 0.0067,
+      "bias": -0.0018,
+      "p90_abs_error": 0.0137,
+      "coverage": null,
+      "width": null,
+      "units": 144
+    },
+    "ppi": {
+      "mae": 0.0129,
+      "bias": -0.0017,
+      "p90_abs_error": 0.0257,
+      "coverage": 0.9931,
+      "width": 0.0797,
+      "units": 144
+    },
+    "return_adjusted": {
+      "mae": 0.0328,
+      "bias": 0.0271,
+      "p90_abs_error": 0.0654,
+      "coverage": null,
+      "width": null,
+      "units": 144
+    }
+  },
+  "resolution_units": [
+    {
+      "workspace": 0,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6734,
+      "ppi": 0.6533,
+      "low": 0.6054,
+      "high": 0.7012,
+      "billed": 0.7875
+    },
+    {
+      "workspace": 0,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6874,
+      "ppi": 0.6769,
+      "low": 0.6293,
+      "high": 0.7244,
+      "billed": 0.821
+    },
+    {
+      "workspace": 0,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7598,
+      "ppi": 0.743,
+      "low": 0.6971,
+      "high": 0.7889,
+      "billed": 0.8564
+    },
+    {
+      "workspace": 0,
+      "block": 3,
+      "seed": 1,
+      "true": 0.8333,
+      "ppi": 0.8093,
+      "low": 0.7683,
+      "high": 0.8504,
+      "billed": 0.8952
+    },
+    {
+      "workspace": 1,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6721,
+      "ppi": 0.657,
+      "low": 0.625,
+      "high": 0.6889,
+      "billed": 0.762
+    },
+    {
+      "workspace": 1,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6983,
+      "ppi": 0.6938,
+      "low": 0.6568,
+      "high": 0.7307,
+      "billed": 0.7737
+    },
+    {
+      "workspace": 1,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7758,
+      "ppi": 0.7535,
+      "low": 0.7161,
+      "high": 0.7909,
+      "billed": 0.8253
+    },
+    {
+      "workspace": 1,
+      "block": 3,
+      "seed": 1,
+      "true": 0.8161,
+      "ppi": 0.8169,
+      "low": 0.7807,
+      "high": 0.8531,
+      "billed": 0.839
+    },
+    {
+      "workspace": 2,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6708,
+      "ppi": 0.6515,
+      "low": 0.6057,
+      "high": 0.6973,
+      "billed": 0.8194
+    },
+    {
+      "workspace": 2,
+      "block": 1,
+      "seed": 1,
+      "true": 0.7028,
+      "ppi": 0.7029,
+      "low": 0.6633,
+      "high": 0.7426,
+      "billed": 0.844
+    },
+    {
+      "workspace": 2,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7375,
+      "ppi": 0.7482,
+      "low": 0.7047,
+      "high": 0.7917,
+      "billed": 0.8593
+    },
+    {
+      "workspace": 2,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7945,
+      "ppi": 0.79,
+      "low": 0.7471,
+      "high": 0.8328,
+      "billed": 0.8814
+    },
+    {
+      "workspace": 3,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6752,
+      "ppi": 0.6578,
+      "low": 0.638,
+      "high": 0.6777,
+      "billed": 0.7666
+    },
+    {
+      "workspace": 3,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6339,
+      "ppi": 0.62,
+      "low": 0.6019,
+      "high": 0.6381,
+      "billed": 0.7421
+    },
+    {
+      "workspace": 3,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7459,
+      "ppi": 0.7477,
+      "low": 0.7067,
+      "high": 0.7887,
+      "billed": 0.8163
+    },
+    {
+      "workspace": 3,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7689,
+      "ppi": 0.7646,
+      "low": 0.7342,
+      "high": 0.795,
+      "billed": 0.8309
+    },
+    {
+      "workspace": 4,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6192,
+      "ppi": 0.5944,
+      "low": 0.545,
+      "high": 0.6438,
+      "billed": 0.7968
+    },
+    {
+      "workspace": 4,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6532,
+      "ppi": 0.6393,
+      "low": 0.6031,
+      "high": 0.6756,
+      "billed": 0.8092
+    },
+    {
+      "workspace": 4,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7392,
+      "ppi": 0.7207,
+      "low": 0.691,
+      "high": 0.7505,
+      "billed": 0.8383
+    },
+    {
+      "workspace": 4,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7193,
+      "ppi": 0.7193,
+      "low": 0.6793,
+      "high": 0.7592,
+      "billed": 0.8367
+    },
+    {
+      "workspace": 5,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6358,
+      "ppi": 0.5849,
+      "low": 0.5188,
+      "high": 0.651,
+      "billed": 0.89
+    },
+    {
+      "workspace": 5,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6729,
+      "ppi": 0.668,
+      "low": 0.6253,
+      "high": 0.7107,
+      "billed": 0.9042
+    },
+    {
+      "workspace": 5,
+      "block": 2,
+      "seed": 1,
+      "true": 0.759,
+      "ppi": 0.7396,
+      "low": 0.6846,
+      "high": 0.7945,
+      "billed": 0.9054
+    },
+    {
+      "workspace": 5,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7524,
+      "ppi": 0.7252,
+      "low": 0.6771,
+      "high": 0.7734,
+      "billed": 0.9218
+    },
+    {
+      "workspace": 6,
+      "block": 0,
+      "seed": 1,
+      "true": 0.667,
+      "ppi": 0.6629,
+      "low": 0.6222,
+      "high": 0.7036,
+      "billed": 0.8525
+    },
+    {
+      "workspace": 6,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6725,
+      "ppi": 0.666,
+      "low": 0.6517,
+      "high": 0.6803,
+      "billed": 0.8478
+    },
+    {
+      "workspace": 6,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7567,
+      "ppi": 0.7347,
+      "low": 0.6978,
+      "high": 0.7716,
+      "billed": 0.8787
+    },
+    {
+      "workspace": 6,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7719,
+      "ppi": 0.7761,
+      "low": 0.7472,
+      "high": 0.8051,
+      "billed": 0.8874
+    },
+    {
+      "workspace": 7,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6823,
+      "ppi": 0.6843,
+      "low": 0.6505,
+      "high": 0.7181,
+      "billed": 0.8185
+    },
+    {
+      "workspace": 7,
+      "block": 1,
+      "seed": 1,
+      "true": 0.7324,
+      "ppi": 0.7191,
+      "low": 0.6867,
+      "high": 0.7516,
+      "billed": 0.8554
+    },
+    {
+      "workspace": 7,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7669,
+      "ppi": 0.7596,
+      "low": 0.7273,
+      "high": 0.7919,
+      "billed": 0.8712
+    },
+    {
+      "workspace": 7,
+      "block": 3,
+      "seed": 1,
+      "true": 0.8056,
+      "ppi": 0.8542,
+      "low": 0.7938,
+      "high": 0.9146,
+      "billed": 0.8768
+    },
+    {
+      "workspace": 8,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6463,
+      "ppi": 0.6427,
+      "low": 0.5998,
+      "high": 0.6856,
+      "billed": 0.8259
+    },
+    {
+      "workspace": 8,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6277,
+      "ppi": 0.6348,
+      "low": 0.5946,
+      "high": 0.675,
+      "billed": 0.794
+    },
+    {
+      "workspace": 8,
+      "block": 2,
+      "seed": 1,
+      "true": 0.737,
+      "ppi": 0.7439,
+      "low": 0.6973,
+      "high": 0.7904,
+      "billed": 0.8635
+    },
+    {
+      "workspace": 8,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7523,
+      "ppi": 0.7656,
+      "low": 0.7129,
+      "high": 0.8183,
+      "billed": 0.8748
+    },
+    {
+      "workspace": 9,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6043,
+      "ppi": 0.597,
+      "low": 0.5645,
+      "high": 0.6295,
+      "billed": 0.7447
+    },
+    {
+      "workspace": 9,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6583,
+      "ppi": 0.6542,
+      "low": 0.6163,
+      "high": 0.6921,
+      "billed": 0.7812
+    },
+    {
+      "workspace": 9,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7714,
+      "ppi": 0.7598,
+      "low": 0.7177,
+      "high": 0.802,
+      "billed": 0.8538
+    },
+    {
+      "workspace": 9,
+      "block": 3,
+      "seed": 1,
+      "true": 0.8169,
+      "ppi": 0.8042,
+      "low": 0.7758,
+      "high": 0.8325,
+      "billed": 0.8711
+    },
+    {
+      "workspace": 10,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6677,
+      "ppi": 0.6782,
+      "low": 0.6305,
+      "high": 0.726,
+      "billed": 0.7237
+    },
+    {
+      "workspace": 10,
+      "block": 1,
+      "seed": 1,
+      "true": 0.7198,
+      "ppi": 0.7131,
+      "low": 0.6738,
+      "high": 0.7524,
+      "billed": 0.7757
+    },
+    {
+      "workspace": 10,
+      "block": 2,
+      "seed": 1,
+      "true": 0.8012,
+      "ppi": 0.8126,
+      "low": 0.7718,
+      "high": 0.8534,
+      "billed": 0.8314
+    },
+    {
+      "workspace": 10,
+      "block": 3,
+      "seed": 1,
+      "true": 0.8193,
+      "ppi": 0.853,
+      "low": 0.7988,
+      "high": 0.9072,
+      "billed": 0.84
+    },
+    {
+      "workspace": 11,
+      "block": 0,
+      "seed": 1,
+      "true": 0.6629,
+      "ppi": 0.6818,
+      "low": 0.6366,
+      "high": 0.727,
+      "billed": 0.8523
+    },
+    {
+      "workspace": 11,
+      "block": 1,
+      "seed": 1,
+      "true": 0.6542,
+      "ppi": 0.654,
+      "low": 0.595,
+      "high": 0.713,
+      "billed": 0.8644
+    },
+    {
+      "workspace": 11,
+      "block": 2,
+      "seed": 1,
+      "true": 0.7183,
+      "ppi": 0.7036,
+      "low": 0.6682,
+      "high": 0.739,
+      "billed": 0.8825
+    },
+    {
+      "workspace": 11,
+      "block": 3,
+      "seed": 1,
+      "true": 0.7663,
+      "ppi": 0.7397,
+      "low": 0.6832,
+      "high": 0.7962,
+      "billed": 0.8832
+    }
+  ],
+  "lift": {
+    "ab_holdout": {
+      "fixes": 540,
+      "estimated": 537,
+      "bias": 0.0051,
+      "rmse": 0.1138,
+      "coverage": 0.9348,
+      "claimed_wins": 56,
+      "false_wins": 4,
+      "pooled": 0.0354,
+      "pooled_low": 0.0283,
+      "pooled_high": 0.0425,
+      "true_mean": 0.0338
+    },
+    "before_after_billed": {
+      "fixes": 540,
+      "estimated": 539,
+      "bias": 0.0273,
+      "rmse": 0.0859,
+      "coverage": 0.9351,
+      "claimed_wins": 64,
+      "false_wins": 6,
+      "pooled": 0.049,
+      "pooled_low": 0.0434,
+      "pooled_high": 0.0546,
+      "true_mean": 0.0337
+    },
+    "before_after_model": {
+      "fixes": 540,
+      "estimated": 539,
+      "bias": 0.0343,
+      "rmse": 0.0974,
+      "coverage": 0.9276,
+      "claimed_wins": 83,
+      "false_wins": 4,
+      "pooled": 0.0623,
+      "pooled_low": 0.056,
+      "pooled_high": 0.0686,
+      "true_mean": 0.0337
+    },
+    "did": {
+      "fixes": 540,
+      "estimated": 358,
+      "bias": 0.0376,
+      "rmse": 0.124,
+      "coverage": 0.9358,
+      "claimed_wins": 33,
+      "false_wins": 3,
+      "pooled": 0.061,
+      "pooled_low": 0.0506,
+      "pooled_high": 0.0713,
+      "true_mean": 0.0325
+    },
+    "did_rtm": {
+      "fixes": 540,
+      "estimated": 302,
+      "bias": -0.0024,
+      "rmse": 0.1176,
+      "coverage": 0.9073,
+      "claimed_wins": 25,
+      "false_wins": 4,
+      "pooled": 0.0274,
+      "pooled_low": 0.0181,
+      "pooled_high": 0.0366,
+      "true_mean": 0.0322
+    }
+  },
+  "lift_points": [
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0382,
+      "truth": 0.0519
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0198,
+      "truth": 0.058
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0374,
+      "truth": 0.036
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1182,
+      "truth": 0.0784
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0956,
+      "truth": -0.0155
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1506,
+      "truth": -0.0083
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1457,
+      "truth": 0.0769
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0427,
+      "truth": 0.1474
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0619,
+      "truth": 0.0555
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0314,
+      "truth": -0.0518
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1695,
+      "truth": 0.005
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0219,
+      "truth": 0.0407
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.012,
+      "truth": 0.0306
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0406,
+      "truth": 0.0367
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0041,
+      "truth": 0.0339
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1464,
+      "truth": 0.0127
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1287,
+      "truth": -0.0066
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0454,
+      "truth": 0.1012
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.2148,
+      "truth": -0.07
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1276,
+      "truth": 0.0643
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1222,
+      "truth": -0.0175
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0339,
+      "truth": 0.0283
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.163,
+      "truth": 0.0022
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1214,
+      "truth": 0.0
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1217,
+      "truth": 0.0622
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0404,
+      "truth": 0.0238
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0001,
+      "truth": 0.0426
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.082,
+      "truth": 0.0273
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1099,
+      "truth": 0.0306
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0691,
+      "truth": 0.0286
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.064,
+      "truth": 0.027
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1526,
+      "truth": 0.093
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1091,
+      "truth": 0.0336
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0554,
+      "truth": 0.0736
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0182,
+      "truth": 0.0368
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.033,
+      "truth": 0.0226
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1139,
+      "truth": 0.0861
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.2199,
+      "truth": 0.079
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0404,
+      "truth": 0.0039
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0612,
+      "truth": 0.0304
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0896,
+      "truth": 0.0227
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.171,
+      "truth": 0.0551
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0979,
+      "truth": 0.0104
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.102,
+      "truth": 0.0539
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1224,
+      "truth": 0.0397
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0645,
+      "truth": 0.0297
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.111,
+      "truth": 0.0223
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0023,
+      "truth": 0.0297
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0305,
+      "truth": 0.0339
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0417,
+      "truth": 0.008
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.226,
+      "truth": 0.0106
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1247,
+      "truth": 0.0279
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0362,
+      "truth": 0.0836
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0472,
+      "truth": 0.1255
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0135,
+      "truth": 0.0817
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.2481,
+      "truth": 0.061
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0121,
+      "truth": 0.0602
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0822,
+      "truth": 0.1248
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0604,
+      "truth": -0.061
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1979,
+      "truth": 0.0484
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.3816,
+      "truth": 0.0279
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.028,
+      "truth": 0.0075
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1141,
+      "truth": 0.0282
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0486,
+      "truth": 0.0915
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0506,
+      "truth": 0.0129
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.064,
+      "truth": 0.0259
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0317,
+      "truth": 0.0785
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.121,
+      "truth": -0.0015
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0591,
+      "truth": 0.0288
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1262,
+      "truth": -0.0046
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0485,
+      "truth": 0.0165
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1346,
+      "truth": 0.118
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0872,
+      "truth": 0.0537
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0209,
+      "truth": 0.03
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0223,
+      "truth": 0.0464
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0535,
+      "truth": 0.0139
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1174,
+      "truth": 0.0549
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.066,
+      "truth": 0.0007
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.249,
+      "truth": 0.026
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0291,
+      "truth": 0.0089
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0272,
+      "truth": 0.1405
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1824,
+      "truth": 0.0235
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0722,
+      "truth": 0.0074
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1316,
+      "truth": 0.0233
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1249,
+      "truth": 0.0839
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0501,
+      "truth": 0.0343
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.035,
+      "truth": 0.044
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0737,
+      "truth": 0.0472
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1031,
+      "truth": 0.0708
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1201,
+      "truth": 0.0416
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0632,
+      "truth": -0.0346
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1654,
+      "truth": 0.0987
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1169,
+      "truth": 0.037
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0249,
+      "truth": 0.0606
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0367,
+      "truth": 0.0066
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0834,
+      "truth": 0.0701
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0347,
+      "truth": -0.0073
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.102,
+      "truth": 0.1271
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0669,
+      "truth": -0.0585
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1259,
+      "truth": 0.0399
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1394,
+      "truth": 0.0547
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0107,
+      "truth": 0.0335
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.258,
+      "truth": 0.0603
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0416,
+      "truth": 0.0395
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.3099,
+      "truth": 0.0861
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0678,
+      "truth": 0.027
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1149,
+      "truth": 0.0487
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.2607,
+      "truth": -0.0089
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0424,
+      "truth": 0.0752
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.021,
+      "truth": 0.0604
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1556,
+      "truth": 0.0044
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0664,
+      "truth": 0.0263
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0834,
+      "truth": 0.0521
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0149,
+      "truth": 0.0848
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0561,
+      "truth": 0.0493
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0352,
+      "truth": 0.0584
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1993,
+      "truth": -0.01
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1763,
+      "truth": 0.0612
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0772,
+      "truth": 0.0293
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1047,
+      "truth": 0.1038
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1903,
+      "truth": 0.0211
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0144,
+      "truth": 0.0613
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1853,
+      "truth": 0.089
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0748,
+      "truth": -0.0202
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0745,
+      "truth": 0.0378
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1296,
+      "truth": -0.0226
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0847,
+      "truth": 0.0274
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0107,
+      "truth": 0.091
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0338,
+      "truth": 0.0133
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1385,
+      "truth": 0.096
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0905,
+      "truth": 0.0047
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1246,
+      "truth": 0.0745
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0095,
+      "truth": 0.0338
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.068,
+      "truth": 0.0574
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1229,
+      "truth": 0.0477
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0628,
+      "truth": 0.0278
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0072,
+      "truth": 0.0225
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0458,
+      "truth": -0.0378
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.076,
+      "truth": 0.008
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1263,
+      "truth": -0.0142
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0342,
+      "truth": 0.0268
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0768,
+      "truth": 0.0471
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.043,
+      "truth": 0.0748
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1156,
+      "truth": 0.0042
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1941,
+      "truth": 0.072
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0345,
+      "truth": 0.0798
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.2365,
+      "truth": -0.0498
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0566,
+      "truth": 0.0333
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.0611,
+      "truth": -0.0092
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": -0.1164,
+      "truth": 0.0059
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1204,
+      "truth": 0.124
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0008,
+      "truth": 0.0721
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0505,
+      "truth": 0.1032
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0513,
+      "truth": 0.0241
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0782,
+      "truth": 0.0053
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0286,
+      "truth": 0.038
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0337,
+      "truth": -0.0015
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.1499,
+      "truth": 0.108
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.2437,
+      "truth": 0.0322
+    },
+    {
+      "design": "ab_holdout",
+      "estimate": 0.0766,
+      "truth": 0.0541
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0121,
+      "truth": 0.0
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.098,
+      "truth": 0.0752
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1415,
+      "truth": 0.0129
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0399,
+      "truth": -0.0008
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0138,
+      "truth": -0.0155
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0246,
+      "truth": 0.0604
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0803,
+      "truth": 0.0279
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1334,
+      "truth": 0.0405
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1688,
+      "truth": 0.0294
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0196,
+      "truth": -0.0518
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0218,
+      "truth": -0.0538
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0735,
+      "truth": 0.0407
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.005,
+      "truth": 0.0218
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.163,
+      "truth": 0.0287
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0134,
+      "truth": 0.0339
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0033,
+      "truth": 0.0056
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.1389,
+      "truth": -0.0066
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0598,
+      "truth": 0.0381
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0291,
+      "truth": 0.0618
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1043,
+      "truth": 0.0643
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0436,
+      "truth": -0.0175
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0863,
+      "truth": 0.0097
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0095,
+      "truth": 0.0022
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1058,
+      "truth": 0.0769
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.068,
+      "truth": 0.053
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.2123,
+      "truth": 0.109
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0793,
+      "truth": 0.0039
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.2082,
+      "truth": 0.0243
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1059,
+      "truth": 0.0306
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0167,
+      "truth": 0.0286
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.3068,
+      "truth": -0.0081
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.027,
+      "truth": 0.093
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0066,
+      "truth": 0.05
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.113,
+      "truth": 0.027
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0127,
+      "truth": 0.0368
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0245,
+      "truth": 0.0226
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0103,
+      "truth": -0.0366
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1216,
+      "truth": 0.079
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.1389,
+      "truth": -0.0777
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.046,
+      "truth": 0.0603
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0505,
+      "truth": 0.0227
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0911,
+      "truth": 0.0219
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0853,
+      "truth": 0.0694
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.2446,
+      "truth": 0.0539
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0607,
+      "truth": 0.0388
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1287,
+      "truth": 0.0825
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0452,
+      "truth": -0.0585
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0611,
+      "truth": 0.0297
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0334,
+      "truth": 0.0736
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1077,
+      "truth": 0.008
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1104,
+      "truth": -0.0179
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0178,
+      "truth": 0.0279
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1056,
+      "truth": 0.0836
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0719,
+      "truth": 0.1255
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1371,
+      "truth": 0.0374
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1019,
+      "truth": 0.061
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0838,
+      "truth": 0.0602
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1006,
+      "truth": 0.1248
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0132,
+      "truth": -0.061
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1229,
+      "truth": 0.0335
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0222,
+      "truth": -0.0009
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0722,
+      "truth": 0.0224
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.082,
+      "truth": 0.0282
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0966,
+      "truth": 0.0745
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.004,
+      "truth": 0.1162
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0096,
+      "truth": 0.0259
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0481,
+      "truth": 0.0541
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0594,
+      "truth": 0.0705
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1054,
+      "truth": 0.0288
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.041,
+      "truth": -0.07
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0799,
+      "truth": 0.058
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.088,
+      "truth": 0.0
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1442,
+      "truth": 0.0765
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0435,
+      "truth": 0.0
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.059,
+      "truth": 0.0106
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0315,
+      "truth": 0.0139
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0546,
+      "truth": 0.124
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0237,
+      "truth": 0.0339
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0716,
+      "truth": 0.0426
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0074,
+      "truth": -0.0287
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0865,
+      "truth": 0.0246
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1448,
+      "truth": 0.0839
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.036,
+      "truth": 0.027
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1727,
+      "truth": 0.0533
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1018,
+      "truth": 0.0383
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1299,
+      "truth": 0.1162
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1569,
+      "truth": 0.044
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1429,
+      "truth": -0.0022
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1282,
+      "truth": 0.0708
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.092,
+      "truth": 0.0416
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0078,
+      "truth": -0.0346
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1889,
+      "truth": 0.096
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0498,
+      "truth": 0.1038
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.1444,
+      "truth": 0.0606
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0978,
+      "truth": 0.0617
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1117,
+      "truth": 0.0966
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.2091,
+      "truth": 0.0529
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0652,
+      "truth": 0.0664
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0082,
+      "truth": 0.0223
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0476,
+      "truth": 0.0253
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1207,
+      "truth": 0.0278
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0333,
+      "truth": 0.0018
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0057,
+      "truth": 0.0232
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0237,
+      "truth": 0.0
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0524,
+      "truth": 0.1274
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0907,
+      "truth": 0.0358
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0266,
+      "truth": 0.0547
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0503,
+      "truth": -0.0089
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1387,
+      "truth": 0.0195
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0029,
+      "truth": 0.0397
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0458,
+      "truth": 0.0168
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0462,
+      "truth": 0.0263
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1055,
+      "truth": 0.0521
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0397,
+      "truth": 0.0848
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0305,
+      "truth": 0.091
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0982,
+      "truth": 0.0466
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0143,
+      "truth": -0.01
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0961,
+      "truth": 0.0612
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0369,
+      "truth": -0.0185
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0666,
+      "truth": 0.1474
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1074,
+      "truth": 0.1032
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1045,
+      "truth": 0.0622
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0057,
+      "truth": -0.0552
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0271,
+      "truth": 0.0806
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0872,
+      "truth": 0.0378
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0062,
+      "truth": -0.0226
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0302,
+      "truth": 0.0274
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1032,
+      "truth": 0.0282
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0811,
+      "truth": 0.0133
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1994,
+      "truth": -0.0046
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1333,
+      "truth": 0.0392
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0855,
+      "truth": 0.0588
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1441,
+      "truth": 0.0338
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1021,
+      "truth": 0.0452
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0011,
+      "truth": 0.0477
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.065,
+      "truth": 0.0278
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1229,
+      "truth": 0.0721
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0188,
+      "truth": -0.0378
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0935,
+      "truth": 0.008
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1404,
+      "truth": 0.03
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1074,
+      "truth": 0.0268
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.098,
+      "truth": 0.0471
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0371,
+      "truth": 0.0269
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0153,
+      "truth": 0.0159
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0635,
+      "truth": 0.0151
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0859,
+      "truth": 0.0798
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0696,
+      "truth": -0.0498
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.2083,
+      "truth": 0.0333
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0407,
+      "truth": -0.0092
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.1219,
+      "truth": 0.0059
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0119,
+      "truth": 0.0286
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0307,
+      "truth": 0.0308
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0895,
+      "truth": 0.055
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1511,
+      "truth": 0.0469
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.1536,
+      "truth": 0.0053
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0097,
+      "truth": 0.0191
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0737,
+      "truth": -0.0099
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0732,
+      "truth": 0.0551
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": 0.0848,
+      "truth": -0.0036
+    },
+    {
+      "design": "before_after_billed",
+      "estimate": -0.0028,
+      "truth": 0.0273
+    }
+  ],
+  "mde_median": 0.2798
+}

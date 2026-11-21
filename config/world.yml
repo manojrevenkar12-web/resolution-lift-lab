@@ -1,0 +1,47 @@
+# The simulated support world. Everything here is the world's own truth: no method reads this
+# file (tests check it). Numbers are on the logit scale unless they say otherwise.
+days: 112
+workspaces: 12                  # businesses using the AI agent; verticals and languages rotate
+languages: [en, en, de]         # every third workspace writes German
+daily_volume: {median: 55, spread: 0.45}   # conversations per workspace and day, lognormal
+weekly_shape: [1.15, 1.1, 1.05, 1.0, 0.95, 0.6, 0.55]   # Monday .. Sunday
+
+resolution:
+  base: 0.2                     # intercept
+  coverage_weight: 2.2          # how much the article's quality matters
+  coverage_start: {mean: 0.45, sd: 0.2}     # article quality in [0, 1] at day 0
+  difficulty_weight: 1.0        # topic difficulty from topics.yml
+  segment: {self_serve: 0.25, standard: 0.0, enterprise: -0.35}
+  segment_mix: {self_serve: 0.45, standard: 0.4, enterprise: 0.15}
+  conversation_noise: 0.6       # per-conversation logit noise
+  model_upgrade: {day: 63, effect: 0.35}   # the agent's model improves for every workspace at once
+  misretrieval: 0.08            # chance the agent cites an article of another topic
+
+incidents:                      # a new problem (outage, carrier delay) on one topic
+  per_workspace_month: 0.9
+  length_days: [3, 8]
+  volume_multiplier: [1.8, 3.5]
+  resolution_penalty: [0.6, 1.4]
+
+behaviour:                      # what the customer does after the agent's last answer
+  resolved: {confirm: 0.33, quiet: 0.64, ask_more: 0.03}
+  unresolved_ask_more: {self_serve: 0.45, standard: 0.6, enterprise: 0.75}   # the rest go quiet
+  ask_more_spread: 0.15         # businesses differ: in some, unhappy customers rarely ask again
+  return_7d: {resolved_quiet: 0.05, unresolved_quiet: 0.42, resolved_confirm: 0.02}
+  quiet_seconds: {resolved: [4.0, 0.8], unresolved: [3.8, 0.9]}   # lognormal mu, sigma of time to leave
+
+answer_confidence:              # retrieval score the agent logs for its answer
+  coverage_weight: 0.5
+  truth_weight: 0.08
+  noise: 0.18
+
+audit:                          # people review a random sample each week and record the truth
+  per_workspace_week: 18
+
+fixes:                          # the content team acts on the agent's weekly recommendations
+  weekday: 0                    # decided on Mondays from the previous 7 days
+  pick_lowest_rate: 0.75        # else a random topic (a fix someone asked for)
+  min_conversations: 15
+  cooldown_days: 28
+  effect: {mean: 0.12, sd: 0.14}    # change in article quality (0..1 scale); some fixes hurt
+  holdout_days: 14              # A/B design: half the conversations keep the old article

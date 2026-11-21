@@ -1,0 +1,46 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  background: var(--surface);
+}
+
+.table th,
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--hairline) solid var(--rule);
+  text-align: left;
+}
+
+.table thead th {
+  color: var(--ink-muted);
+  font-weight: var(--weight-medium);
+}
+
+.table tbody th {
+  font-weight: var(--weight-regular);
+}
+
+.table .n {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.table tr[data-pick] th,
+.table tr[data-pick] td {
+  font-weight: var(--weight-bold);
+  color: var(--measured);
+}
+
+.table tr[data-pick] th {
+  box-shadow: inset 3px 0 0 var(--measured);
+}
+
+.table tr[data-status-quo] th {
+  box-shadow: inset 3px 0 0 var(--claim);
+}
+
+.wrap {
+  overflow-x: auto;
+}

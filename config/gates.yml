@@ -1,0 +1,11 @@
+# What the platform's chosen methods must show (python -m rll.cli gate). Set from the development
+# seeds before the held-out seeds ran; never loosened after.
+topics:                          # char_kmeans_cited
+  ari_min: 0.85
+  gaps_found_min: 0.9            # share of workspaces whose content gap is flagged
+  false_flags_per_workspace_max: 0.15
+resolution:                      # prediction-powered inference
+  ppi_coverage_min: 0.9
+  ppi_mae_max: 0.02
+lift:                            # pooled A/B holdout
+  pooled_error_max: 0.01

@@ -1,0 +1,190 @@
+# The topics customers write about, by vertical. Each topic is one help-centre article.
+# Templates are filled with the slot values below; `{x}` picks a random value of slot x.
+# Topics inside a vertical deliberately share words (refund vs return, password vs 2FA), so
+# clustering is not trivial. German templates are used by workspaces whose language is de.
+# difficulty: how hard the question is for an AI agent even with a good article (logit scale).
+slots:
+  greet_en: ["hi", "hello", "hey there", "", "", "good morning"]
+  greet_de: ["hallo", "guten tag", "hi", "", ""]
+  urgency_en: ["", "", "asap please", "this is urgent", "thanks in advance", "help!"]
+  urgency_de: ["", "", "bitte schnell", "dringend", "danke im voraus"]
+  order: ["#48213", "order 99812", "my last order", "the order from monday", "order no 77120"]
+  bestellung: ["#48213", "bestellung 99812", "meine letzte bestellung", "die bestellung von montag"]
+  plan: ["pro plan", "team plan", "starter plan", "annual plan", "business tier"]
+  tarif: ["pro tarif", "team tarif", "jahresabo", "business tarif"]
+  card: ["visa", "mastercard", "credit card", "debit card", "amex"]
+  karte: ["visa karte", "mastercard", "kreditkarte", "debitkarte"]
+  amount: ["49 eur", "12.99", "200 euros", "the full amount", "350"]
+  integration: ["slack", "salesforce", "hubspot", "zapier", "the api"]
+verticals:
+  saas:
+    reset_password:
+      difficulty: 0.0
+      en: ["{greet_en} i forgot my password and the reset email never arrives {urgency_en}",
+           "{greet_en} how do i reset my password, the link says expired",
+           "cant log in, password reset not working {urgency_en}"]
+      de: ["{greet_de} ich habe mein passwort vergessen und die reset mail kommt nicht {urgency_de}",
+           "passwort zurücksetzen geht nicht, link abgelaufen"]
+    two_factor:
+      difficulty: 0.4
+      en: ["{greet_en} i lost my phone and cant get the 2fa code to log in {urgency_en}",
+           "two factor authentication code not accepted, how do i log in",
+           "{greet_en} need to reset 2fa, new phone, locked out of my account"]
+      de: ["{greet_de} neues handy, der 2fa code wird nicht akzeptiert und ich komme nicht rein",
+           "zwei faktor code funktioniert nicht {urgency_de}"]
+    change_plan:
+      difficulty: 0.1
+      en: ["{greet_en} how can i upgrade from the {plan} to a bigger plan",
+           "want to downgrade my {plan}, where do i change it {urgency_en}",
+           "{greet_en} switch plan to {plan} mid month, will i be charged"]
+      de: ["{greet_de} wie wechsle ich vom {tarif} in einen anderen tarif",
+           "ich möchte mein {tarif} kündigen oder herabstufen"]
+    invoice_copy:
+      difficulty: -0.2
+      en: ["{greet_en} where can i download my invoice for last month",
+           "need a copy of the invoice with our vat number {urgency_en}",
+           "{greet_en} invoice shows the wrong company address, can i get a new one"]
+      de: ["{greet_de} wo finde ich die rechnung vom letzten monat",
+           "rechnung mit ust id benötigt {urgency_de}"]
+    api_rate_limit:
+      difficulty: 0.9
+      en: ["{greet_en} we keep getting 429 errors from {integration}, what is the rate limit",
+           "api calls failing with too many requests since this morning {urgency_en}",
+           "{greet_en} how do i raise the api rate limit for our account"]
+      de: ["{greet_de} wir bekommen ständig 429 fehler von {integration}",
+           "api limit erhöhen, zu viele anfragen fehler"]
+    integration_sync:
+      difficulty: 0.7
+      en: ["{greet_en} the {integration} integration stopped syncing contacts {urgency_en}",
+           "data is not syncing to {integration} anymore, how do i reconnect",
+           "{greet_en} {integration} sync shows an error and duplicates records"]
+      de: ["{greet_de} die {integration} integration synchronisiert nicht mehr",
+           "{integration} verbindung neu einrichten, daten fehlen"]
+    export_data:
+      difficulty: 0.2
+      en: ["{greet_en} how do i export all my data as csv",
+           "need to export our contacts before we cancel {urgency_en}",
+           "{greet_en} the export button gives an empty file"]
+      de: ["{greet_de} wie exportiere ich alle daten als csv",
+           "export liefert eine leere datei {urgency_de}"]
+    add_seats:
+      difficulty: 0.0
+      en: ["{greet_en} how do i add more seats for new teammates on the {plan}",
+           "invite a colleague but it says no seats left {urgency_en}",
+           "{greet_en} remove a user and free up a seat"]
+      de: ["{greet_de} wie füge ich weitere plätze für kollegen hinzu",
+           "kollegen einladen geht nicht, keine plätze frei"]
+  ecommerce:
+    where_is_order:
+      difficulty: 0.1
+      en: ["{greet_en} where is {order}, tracking has not updated in days {urgency_en}",
+           "my package from {order} still says in transit",
+           "{greet_en} when will {order} arrive"]
+      de: ["{greet_de} wo ist {bestellung}, die sendungsverfolgung bewegt sich nicht {urgency_de}",
+           "wann kommt {bestellung} an"]
+    return_item:
+      difficulty: 0.0
+      en: ["{greet_en} how do i return an item from {order}",
+           "want to send back the shoes, they dont fit {urgency_en}",
+           "{greet_en} print a return label for {order}"]
+      de: ["{greet_de} wie schicke ich einen artikel aus {bestellung} zurück",
+           "rücksendeetikett für {bestellung} {urgency_de}"]
+    refund_status:
+      difficulty: 0.5
+      en: ["{greet_en} i returned {order} two weeks ago and still no refund {urgency_en}",
+           "where is my refund of {amount}",
+           "{greet_en} refund not received after the return was delivered"]
+      de: ["{greet_de} ich habe {bestellung} zurückgeschickt aber keine erstattung erhalten",
+           "wo bleibt meine rückerstattung von {amount} {urgency_de}"]
+    wrong_item:
+      difficulty: 0.6
+      en: ["{greet_en} i received the wrong item in {order} {urgency_en}",
+           "package had a different color than i ordered",
+           "{greet_en} item arrived damaged, what now"]
+      de: ["{greet_de} ich habe den falschen artikel in {bestellung} bekommen",
+           "artikel kam beschädigt an {urgency_de}"]
+    change_address:
+      difficulty: 0.3
+      en: ["{greet_en} can i change the delivery address for {order}",
+           "wrong address on {order}, please update {urgency_en}",
+           "{greet_en} ship {order} to my office instead"]
+      de: ["{greet_de} kann ich die lieferadresse für {bestellung} ändern",
+           "falsche adresse bei {bestellung} {urgency_de}"]
+    discount_code:
+      difficulty: -0.1
+      en: ["{greet_en} my discount code is not working at checkout",
+           "the voucher says invalid {urgency_en}",
+           "{greet_en} can i still apply a promo code to {order}"]
+      de: ["{greet_de} mein rabattcode funktioniert nicht an der kasse",
+           "gutschein ungültig {urgency_de}"]
+    payment_failed:
+      difficulty: 0.4
+      en: ["{greet_en} payment with my {card} failed at checkout {urgency_en}",
+           "card declined but money was taken from my account",
+           "{greet_en} why was my {card} declined"]
+      de: ["{greet_de} zahlung mit meiner {karte} ist fehlgeschlagen",
+           "karte abgelehnt aber geld abgebucht {urgency_de}"]
+    size_guide:
+      difficulty: -0.3
+      en: ["{greet_en} which size should i order, do the jeans run small",
+           "is there a size chart for the jackets",
+           "{greet_en} between two sizes, which one fits better"]
+      de: ["{greet_de} welche größe soll ich bestellen, fallen die jeans klein aus",
+           "gibt es eine größentabelle"]
+  fintech:
+    card_declined:
+      difficulty: 0.5
+      en: ["{greet_en} my {card} was declined in a shop today {urgency_en}",
+           "card payment declined abroad, how do i unblock it",
+           "{greet_en} why is my card not working online"]
+      de: ["{greet_de} meine {karte} wurde heute im geschäft abgelehnt {urgency_de}",
+           "karte im ausland abgelehnt, wie entsperre ich sie"]
+    transfer_pending:
+      difficulty: 0.6
+      en: ["{greet_en} my transfer of {amount} is still pending since yesterday {urgency_en}",
+           "sepa transfer not arrived at the recipient",
+           "{greet_en} how long does an international transfer take"]
+      de: ["{greet_de} meine überweisung über {amount} hängt seit gestern {urgency_de}",
+           "sepa überweisung ist nicht angekommen"]
+    verify_identity:
+      difficulty: 0.8
+      en: ["{greet_en} my id verification keeps failing {urgency_en}",
+           "the app rejects my passport photo",
+           "{greet_en} account restricted until i verify, how"]
+      de: ["{greet_de} die identitätsprüfung schlägt immer fehl",
+           "konto eingeschränkt bis zur verifizierung {urgency_de}"]
+    unknown_charge:
+      difficulty: 0.7
+      en: ["{greet_en} there is a charge of {amount} i dont recognize {urgency_en}",
+           "unknown payment on my statement, is this fraud",
+           "{greet_en} someone used my {card}, i didnt make this payment"]
+      de: ["{greet_de} da ist eine abbuchung über {amount} die ich nicht kenne {urgency_de}",
+           "unbekannte zahlung auf dem kontoauszug"]
+    change_limit:
+      difficulty: 0.0
+      en: ["{greet_en} how do i raise my card spending limit",
+           "need a higher atm withdrawal limit for travel {urgency_en}",
+           "{greet_en} change daily limit on my {card}"]
+      de: ["{greet_de} wie erhöhe ich das limit meiner karte",
+           "höheres abhebelimit am geldautomaten {urgency_de}"]
+    close_account:
+      difficulty: 0.2
+      en: ["{greet_en} how do i close my account",
+           "want to cancel and withdraw my remaining balance {urgency_en}",
+           "{greet_en} delete my account and data"]
+      de: ["{greet_de} wie kündige ich mein konto",
+           "konto schließen und guthaben auszahlen {urgency_de}"]
+    statement_download:
+      difficulty: -0.2
+      en: ["{greet_en} where do i download my monthly statement",
+           "need a bank statement pdf for my landlord {urgency_en}",
+           "{greet_en} export transactions for my tax return"]
+      de: ["{greet_de} wo lade ich meinen kontoauszug herunter",
+           "kontoauszug als pdf für den vermieter {urgency_de}"]
+    savings_interest:
+      difficulty: 0.1
+      en: ["{greet_en} what interest rate do i get on savings",
+           "when is the savings interest paid out",
+           "{greet_en} did the interest rate change this month"]
+      de: ["{greet_de} welche zinsen bekomme ich auf das sparkonto",
+           "wann werden die zinsen ausgezahlt"]

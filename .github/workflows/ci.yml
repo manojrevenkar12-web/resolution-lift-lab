@@ -1,0 +1,57 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        python: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # the held-out check reads the lock's history
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - name: lint
+        run: ruff check . && ruff format --check .
+      - name: types
+        run: mypy rll
+      - name: tests
+        run: pytest -q
+      - name: the reports pass their gates
+        run: |
+          python -m rll.cli gate dev
+          if [ -f reports/heldout.json ]; then python -m rll.cli gate heldout; fi
+      - name: the held-out run happened once
+        run: |
+          if [ -f reports/heldout.lock ]; then
+            n=$(git log --format=%H --no-renames -- reports/heldout.lock | wc -l)
+            echo "heldout.lock commits: $n"; test "$n" -eq 1
+          fi
+      - name: reports are generated, not edited
+        if: matrix.python == '3.13'
+        run: |
+          python -m rll.cli report
+          git diff --exit-code -- REPORT.md README.md
+
+  dashboard:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
