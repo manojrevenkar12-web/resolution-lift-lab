@@ -16,6 +16,7 @@ is improvising, because there is no article for that question (a content gap).
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import cast
 
 import numpy as np
 import pandas as pd
@@ -116,7 +117,7 @@ def flag_gaps(labels: np.ndarray, cited: pd.Series, cfg: dict) -> list[int]:
     frame = pd.DataFrame({"c": labels, "a": cited.to_numpy()})
     frame = frame[frame["c"] >= 0]
     top_share = frame.groupby("c")["a"].agg(lambda s: s.value_counts(normalize=True).iloc[0])
-    return [int(c) for c, share in top_share.items() if share <= cfg["gap_max_citation_share"]]
+    return [int(cast(int, c)) for c, share in top_share.items() if share <= cfg["gap_max_citation_share"]]
 
 
 def run(conv: pd.DataFrame, method: str, cfg: dict, seed: int) -> TopicResult:

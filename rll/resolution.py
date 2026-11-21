@@ -18,6 +18,8 @@ used for it, so the correction term is honest.
 
 from __future__ import annotations
 
+from typing import cast
+
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -94,8 +96,8 @@ def estimate(conv: pd.DataFrame, audit: pd.DataFrame, pred: np.ndarray, cfg: dic
         for name, (value, half) in out.items():
             rows.append(
                 {
-                    "workspace": int(w),
-                    "block": int(b),
+                    "workspace": int(cast(int, w)),
+                    "block": int(cast(int, b)),
                     "estimator": name,
                     "estimate": float(value),
                     "low": None if half is None else float(value - half),

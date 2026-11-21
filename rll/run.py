@@ -60,7 +60,7 @@ def run_seed(seed: int) -> dict:
     }
 
 
-def _r(x: float | None, d: int = 4) -> float | None:
+def _r(x: float | np.floating | None, d: int = 4) -> float | None:
     return None if x is None or (isinstance(x, float) and np.isnan(x)) else round(float(x), d)
 
 
